@@ -9,7 +9,6 @@ function CurrencyCalculator() {
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
 
   useEffect(() => {
-    // Fetch list of available currencies from an API (for example, a free currency conversion API).
     axios.get('https://open.er-api.com/v6/latest/3a4b63e109103ffbb3182419')
       .then(response => {
         const data = response.data;
@@ -22,7 +21,6 @@ function CurrencyCalculator() {
   }, []);
 
   useEffect(() => {
-    // Fetch conversion rate from the API based on selected currencies (fromCurrency and toCurrency).
     if (fromCurrency === toCurrency) {
       setConvertedAmount(amount);
     } else {
